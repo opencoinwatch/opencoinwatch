@@ -1,0 +1,12 @@
+.non-production {
+    background-color: #ffcdd2 !important;
+}
+
+html, body {
+    height: 100%;
+    font-family: 'Merriweather Sans', sans-serif;
+}
+
+#login {
+    height: 100%;
+}

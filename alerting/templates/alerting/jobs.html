@@ -1,0 +1,45 @@
+{% extends "alerting/base.html" %}
+
+{% block title %}
+<title>Job history ({{ validating_alerts_count }}) | 🪙 | build {{ build }}</title>
+{% endblock %}
+
+{% block content %}
+<div class="container">
+    <div class="row">
+        <div class="col-6 p-0">
+            <h4 class="mt-3 mb-4">Job history</h4>
+        </div>
+    </div>
+
+    {# List of jobs #}
+    <div class="row">
+        <div class="col">
+        {% if jobs %}
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">Start time</th>
+                        <th scope="col">End time</th>
+                        <th scope="col">Duration</th>
+                        <th scope="col">Success</th>
+                    </tr>
+                </thead>
+                <tbody>
+                {% for job in jobs %}
+                    <tr {% if not job.success %}class="table-danger"{% endif %}>
+                        <td>{{ job.start_time|date:"r" }}</td>
+                        <td>{{ job.end_time|date:"r" }}</td>
+                        <td>{{ job.get_duration }} s</td>
+                        <td>{{ job.success }}</td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        {% else %}
+            No jobs to display.
+        {% endif %}
+        </div>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,40 @@
+.non-production {
+    background-color: #ef9a9a !important;
+}
+
+body {
+    font-family: 'Merriweather Sans', sans-serif;
+    font-size: 0.95rem;
+    padding-bottom: 1.5rem;
+}
+
+a {
+    text-decoration: none;
+}
+
+b {
+    font-weight: 500;
+}
+
+.navbar {
+    background: #eceff1;
+    user-select: none;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.navbar-brand {
+    font-size: 2em;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 0.5rem;
+}
+
+.validating-badge {
+    margin-left: 0.4em;
+}
+
+.crypto-alert-card {
+    max-width: 40rem;
+    margin-bottom: 1em;
+}

@@ -1,0 +1,10 @@
+{% if messages %}
+<div class="container">
+{% for message in messages %}
+    <div class="alert {% if message.tags == "debug" %}alert-secondary{% elif message.tags == "info" %}alert-primary{% elif message.tags == "success" %}alert-success{% elif message.tags == "warning" %}alert-warning{% elif message.tags == "error" %}alert-danger{% endif %} alert-dismissible fade show mb-0 mt-2" role="alert">
+        {{ message }}
+        <button type="button" class="btn-close" data-bs-dismiss="alert"></button>
+    </div>
+{% endfor %}
+</div>
+{% endif %}
