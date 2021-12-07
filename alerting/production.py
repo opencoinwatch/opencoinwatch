@@ -31,4 +31,5 @@ def post_tweet(text):
     auth = tweepy.OAuthHandler(settings.TWITTER_CONSUMER_KEY, settings.TWITTER_CONSUMER_SECRET)
     auth.set_access_token(settings.TWITTER_ACCESS_TOKEN, settings.TWITTER_ACCESS_SECRET)
     api = tweepy.API(auth)
-    api.update_status(text)
+    card_uri = 'tombstone://card'  # Removes the link thumbnail from tweet
+    api.update_status(text, card_uri=card_uri)
