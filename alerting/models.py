@@ -91,7 +91,7 @@ class Alert(models.Model):
         tags = " ".join(config.SYMBOLS[self.symbol]['tags'])
         link = f"https://coinmarketcap.com/currencies/{config.SYMBOLS[self.symbol]['coinmarketcap']}/"
 
-        return f"{symbol} {direction} {emoji} by {percentual_change}% in the last {time_difference}, now at ${exchange_rate} {tags} {link}"
+        return f"{symbol} {direction} {emoji} by {percentual_change}% in the last {time_difference}, now at {exchange_rate} USDT {tags} {link}"
 
     @staticmethod
     def get_last_published_or_declined_alert_generated_time(symbol):

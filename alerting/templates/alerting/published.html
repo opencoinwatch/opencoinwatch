@@ -23,7 +23,7 @@
                             <b>Timestamp: {{ alert.generated_time }} @ ${{ alert.current_exchange_rate }}</b><br>
                             <b>Reference: {{ alert.referenced_time }} @ ${{ alert.referenced_exchange_rate }}</b><br>
                             <b>Importance w. ha.: {{ alert.get_importance_with_handicap|floatformat:3 }} (basic: {{ alert.get_importance|floatformat:3 }}, handicap: {{ alert.get_handicap|floatformat:3 }}), Binance: <a href="https://www.binance.com/en/trade/{{ alert.symbol }}_USDT" target="_blank">link</a></b><br><br>
-                            {{ alert.get_text }}<br>
+                            {{ alert.published_text }}<br>
                         </p>
                     </div>
                 </div>
