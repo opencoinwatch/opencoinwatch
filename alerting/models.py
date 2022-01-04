@@ -88,10 +88,10 @@ class Alert(models.Model):
         percentual_change = common_utils.smart_float_format(abs(percentual_change_raw))
         time_difference = common_utils.smart_time_duration_format(self.get_time_difference_minutes())
         exchange_rate = common_utils.smart_float_format(self.current_exchange_rate)
-        hashtags = " ".join([f"#{tag}" for tag in config.SYMBOLS[self.symbol]['hashtags']])
+        tags = " ".join(config.SYMBOLS[self.symbol]['tags'])
         link = f"https://coinmarketcap.com/currencies/{config.SYMBOLS[self.symbol]['coinmarketcap']}/"
 
-        return f"{symbol} {direction} {emoji} by {percentual_change}% in the last {time_difference}, now at ${exchange_rate} {hashtags} {link}"
+        return f"{symbol} {direction} {emoji} by {percentual_change}% in the last {time_difference}, now at ${exchange_rate} {tags} {link}"
 
     @staticmethod
     def get_last_published_or_declined_alert_generated_time(symbol):
