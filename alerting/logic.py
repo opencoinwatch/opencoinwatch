@@ -127,8 +127,7 @@ def get_exchange_rates_and_importances(symbols):
     exchange_rates = create_dataset(symbol_data)
     print("... data downloaded.")
 
-    percentages = (exchange_rates.iloc[
-                       -1] / exchange_rates * 100) - 100  # Change in percentages, from the point of view of the previous values
+    percentages = (exchange_rates.iloc[-1] / exchange_rates * 100) - 100  # Change in percentages, from the point of view of the previous values
     percentages = percentages.iloc[:-1]  # Remove last row (the latest exchange rates)
 
     limit_vectorized = np.vectorize(common_utils.percentage_limit)

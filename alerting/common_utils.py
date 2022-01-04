@@ -6,7 +6,7 @@ def percentage_limit(t):
     """
     Input: time in minutes, output: minimal percentage change for raising alert
     """
-    initial_threshold = 1.5
+    initial_threshold = 1.4
     threshold_multiplier = 1.1
     time_multiplier = 1.5
     return initial_threshold * threshold_multiplier ** (np.log(t / 5) / np.log(time_multiplier) - 1)
