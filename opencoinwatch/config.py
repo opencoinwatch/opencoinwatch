@@ -62,6 +62,11 @@ SYMBOLS = {
         'coinmarketcap': 'shiba-inu',
         'tags': ["#shibainu", "#SHIB", "$SHIB"],
     },
+    'MATIC': {
+        'supply': 7162892403,
+        'coinmarketcap': 'polygon',
+        'tags': ["#Polygon", "#MATIC", "$MATIC"],
+    },
     'UNI': {
         'supply': 611643724,
         'coinmarketcap': 'uniswap',
